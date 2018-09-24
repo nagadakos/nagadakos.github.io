@@ -1,9 +1,8 @@
 ---
 layout: post
-title: "Hank Quinlan, Horrible Cop, Launches Site"
+title: "The Forge's Fire is lit!"
 date: 2018-09-20
 ---
 
-Well. Finally got around to putting this old website together. Neat thing about it - powered by 
-[Jekyll](http://jekyllrb.com) and I can use Markdown to author my posts. It actually is a lot 
-easier than I thought it was going to be.
+With the power of Jekyll feeding the flames, the time is nigh for the Forge's bellows to roar!
+Let the hammers of design echo in the internet halls!
