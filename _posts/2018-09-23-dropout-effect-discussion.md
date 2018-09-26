@@ -41,8 +41,8 @@ this sufficiently, we allow the network to train with only a subset of its neuro
 figure below.
 
 
-<!--![_config.yml]({{ site.baseurl }}/images/dropout.gif){: .center-image}-->
-
+![_config.yml]({{ site.baseurl }}/images/dropout.gif){: .center-image}
+<!--\_s-->
 
 *As each training sample goes through, the DL changes the network connecivity, resulting in a
 different instance, that learns different features!*
