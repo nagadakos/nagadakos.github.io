@@ -41,7 +41,8 @@ this sufficiently, we allow the network to train with only a subset of its neuro
 figure below.
 
 
-![_config.yml]({{ site.baseurl }}/images/dropout.gif){: .center-image}
+<!--![_config.yml]({{ site.baseurl }}/images/dropout.gif){: .center-image}-->
+
 
 *As each training sample goes through, the DL changes the network connecivity, resulting in a
 different instance, that learns different features!*
@@ -54,14 +55,14 @@ suboptimal especially in those cases where the training set at our disposal does
 entirety of possible outcomes for the problem at hand.
 
 By enabling the network to learn with a subset of its capacity at a given time, we enable it to
-learn more abastract, more generilizable features. Once the training is done however, it is
+learn more abstract, more generalization-friendly features. Once the training is done however, it is
 important to now that we use the entirety of the network to produce an output. That is, there is no
 dropout logic when testing.
 
 
 ## Some visualization
 Having established intuitively what a Dropout Layer does, lets delve into the results right away and
-find what, if anyhting was gained by this ordeal. And what better way to do this other that plots!
+find what, if anything was gained by this ordeal. And what better way to do this other that plots!
 Lets checkout some network accuracy-vs-epoch reports, to have a visual on what is going on.
 
 The following figures where generated with pyplot and tell a similar tale for both popular
@@ -93,7 +94,7 @@ PyTorch.
 
 *Figure2: Keras and PyTorch with NO Dropout layers: Accuracy vs Epochs curves*
 
-The results are summurized in Table 1. Testing was done by averaging over 1000 iterations of testing
+The results are summarized in Table 1. Testing was done by averaging over 1000 iterations of testing
 the networks on the test set. Notice the difference of the Standard Deviations between
 Drop and No-Drop approaches. It turns out that we can depend on a network with Dropout Layers to be
 consistently better that one that does not!
