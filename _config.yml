@@ -1,5 +1,7 @@
 name: Neural Forge
 markdown: kramdown
 
+gems: [jekyll-giphy]
+
 permalink: /blog/:year/:month/:day/:title
 permalink: pretty
