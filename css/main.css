@@ -9,23 +9,28 @@ nav ul, footer ul {
     padding: 0px;
     list-style: none;
     font-weight: bold;
-	color: purple
 }
 nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
 }
 
+nav.ul.li{
+
+}
 li {
     font-size: 1.5em;
 }
 a {
     text-decoration: none;
-    color: white;
+	color: #6cbdbd;
+    /*color: white;*/
 }
+
 a:hover {
     text-decoration: underline;
 }
+
 h1 {
     font-size: 2.6em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -56,7 +61,7 @@ ul.posts {
 ul.posts li {
     list-style: none;
     font-size: 1em;
-
+	color: purple
 }
 .center-image
 {
