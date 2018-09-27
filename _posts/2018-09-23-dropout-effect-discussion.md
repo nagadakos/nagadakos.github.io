@@ -115,7 +115,42 @@ Keras-NO-Drop       | 0.004062 		| 0.01346  		| 0.00171 		| 0.01140602
 
 
 ## So... 0.1 and 0.24. Per-cent...
-It seems the results are not especially staggering.
+It seems the results are not especially staggering. But we need to consider a number of factor
+playing into this.
+1. The dataset
+2. The relative simplicity of the network
+3. The size of the test set
+
+**DataSet:** The Data is the key factor of any NN's design. We specifically design our networks to
+capture the intricacies of the data that describe our problem. For example object recognition can
+require a different approach than segmentation, financial forecast is also different than training a
+network to play a game. It seems that not all data or problems are equal. More elaborate data or
+difficult tasks require deeper and more intricate networks (i.e recurrent). MNIST character
+recognition is quite simple in this regard. We are provided with a well crafted data set, where each
+character is a black drawing of a number over a white 28x28 frame. So its easy to spot and identify
+and rather homogeneous.
+
+**Task Simplicity:** Also, the task is straightforward: identify which character is being shown! So, a simple network
+should do the trick, and it does. Th network used, for which you can find the code in link at the
+end of this page, is a simple, sequential network, with the following layer structure:
+1. 2D Convolutional
+2. 2D Convolutional
+3. Max Pooling
+4. Dropout
+5. Linear
+6. Dropout
+7. SoftMax output
+
+While this could seem not-so-simple, it is as far as NN's go.
+
+**Test Set:** Finally, we need to consider the size and structure of the test set. Again, our test
+set is not drastically different than our training set; if it were, as a lot of other real-life data
+set are, not using Drop out Layers would have a larger impact. The size of the test set also plays a
+role, in that a 0.1% over 10000 might not seem a lot, it is 10 characters erroneously identified.
+That is 3 4 digit pin attempts rejected; turns out to be important when aliens are
+after you, and you are trying to get the blast door open. That inconvenience could have been avoided
+with the simple use Of Dropout Layers!
+
 ## A note on the Frameworks
 
 **Installation:** Both Keras and PyTorch are quite easy to install and use, with Keras being slightly more
@@ -149,10 +184,10 @@ good to go!
 **Performance:** Now here things are interesting. It again seems like Keras comes ahead, as it take
 less epochs to reach peek accuracy and displays overall better Accuracy on testing, a whooping 0.9%. Granted a 0.9% percent does not sound much but it can make a difference especially on very large data sets and on, well, costly decisions. This might be because Keras uses a more mature backend, Tensorflow, that features better numerical stability or better implementation of gradient computation etc or some slight mismatch in mimicking that architecture in PyTorch on my behalf.
 
-### Future Post
+### Future Comparison Post
 This was a somewhat rushed comparison between the use of these 2 frameworks, as I aim to do a more length and
 detailed post on their quirks and perks!
 
-#### Code
+### Code
 You can find the code for the network, in both frameworks here!  
 [MNIST Recognition Nets used, in Keras/PyTorch](https://github.com/nagadakos/ml-repo)
