@@ -64,6 +64,9 @@ Having established intuitively what a Dropout Layer does, lets delve into the re
 find what, if anything was gained by this ordeal. And what better way to do this other that plots!
 Lets checkout some network accuracy-vs-epoch reports, to have a visual on what is going on.
 
+The curves presented below, correspond to the exactly the same network, implemented in Keras and
+PyTorch. The results are averaged over 100 epochs of training and testing, repeated 10 times.
+
 The following figures where generated with pyplot and tell a similar tale for both popular
 frameworks, Keras and PyTorch. When we do not use the DLs, our network gets "too smart" and it can
 perfectly predict the training data; notice the 1.00 accuracy rate labeled as "train". But how can
@@ -93,8 +96,8 @@ PyTorch.
 
 *Figure2: Keras and PyTorch with NO Dropout layers: Accuracy vs Epochs curves*
 
-The results are summarized in Table 1. Testing was done by averaging over 1000 iterations of testing
-the networks on the test set. Notice the difference of the Standard Deviations between
+The results are summarized in Table 1. Testing was done by averaging the results over 10 iterrations of 100 epochs. 
+Notice the difference of the Standard Deviations between
 Drop and No-Drop approaches. It turns out that we can depend on a network with Dropout Layers to be
 consistently better that one that does not!
 
@@ -105,16 +108,16 @@ Approach 			|                     | Standard Deviations
 :-----------------: | :--- 
  					|  Train Acc    | Train Loss    |   Test Acc   	| Test Loss 
 ---					|		---		|	---			|	---			| ---
-PyTorch-Drop        | 0.0163 		| 0.04838 		| 0.00101   	| 0.00000001
-PyTorch-NO-Drop     | 0.009796 		| 0.01794 		| 0.00342 		| 0.00000994
+PyTorch-Drop        | 99.37 +- 0.0163 	| 0.04838 		| 98.47 +- 0.00101   	| 0.00000001
+PyTorch-NO-Drop     | 99.99 +- 0.009796 | 0.01794 		| 98.23 +- 0.00342 		| 0.00000994
 |--- 
-Keras-Drop          | 0.0068 		| 0.02249 		| 0.00120 		| 0.00680591
-Keras-NO-Drop       | 0.004062 		| 0.01346  		| 0.00171 		| 0.01140602
+Keras-Drop          | 99.64 +- 0.0068  | 0.02249 		| 99.32 +- 0.00120 		| 0.00680591
+Keras-NO-Drop       | 99.99 +- 0.004062| 0.01346  		| 99.22 +- 0.00171 		| 0.01140602
 
 *Table 1: Standard Deviations for the apporaches*
 
 
-## So... 0.1 and 0.24. Per-cent...
+## So... an 0.1 and 0.24 Accuracy Improvement. Per-cent...
 It seems the results are not especially staggering. But we need to consider a number of factor
 playing into this.
 1. The dataset
